@@ -5,6 +5,13 @@ import java.util.List;
 
 public class Permutations {
 
+	/**
+	 * It arranges the given items in ordered lists of size 1 to item count 
+	 * (1-permutations of n, 2-permutations of n,...)
+	 *
+	 * @param items list of items to arrange
+	 * @return list of 1 to item count sized arrangements
+	 */
 	public static List<List<Object>> of(final List<Object> items) {
 		final List<List<Object>> result = new ArrayList<>();
 		for (int i = 1; i <= items.size(); i++) {
@@ -13,6 +20,13 @@ public class Permutations {
 		return result;
 	}
 
+	/**
+	 * It arranges the given items in ordered lists of given size (k-permutations of n)
+	 *
+	 * @param items list of items to arrange (n)
+	 * @param groupSize size of ordered arrangements (k)
+	 * @return list of k sized arrangements
+	 */
 	public static List<List<Object>> of(final List<Object> items, final int groupSize) {
 		if (groupSize < 1 || items.size() < groupSize) {
 			throw new IllegalArgumentException("group size cannot be less than 1 or greater than item count");
