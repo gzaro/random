@@ -5,6 +5,8 @@ import java.util.List;
 
 public class Permutations {
 
+	private static final String GROUP_SIZE_ERROR = "group size cannot be less than 1 or greater than item count";
+
 	/**
 	 * It arranges the given items in ordered lists of size 1 to item count (1-permutations of n, 2-permutations of
 	 * n,...)
@@ -29,7 +31,7 @@ public class Permutations {
 	 */
 	public static List<List<Object>> of(final List<Object> items, final int groupSize) {
 		if (groupSize < 1 || items.size() < groupSize) {
-			throw new IllegalArgumentException("group size cannot be less than 1 or greater than item count");
+			throw new IllegalArgumentException(GROUP_SIZE_ERROR);
 		}
 		return getPermutations(items, groupSize);
 	}
